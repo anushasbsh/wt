@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body { background-color: #e600e6; text-align: center; font-family: Arial, sans-serif; }
+        input { margin: 5px; padding: 5px; }
+        button { padding: 8px 15px; background: #333; color: white; border: none; cursor: pointer; }
+        button:hover { background: #555; }
+    </style>
+    <script>
+        function checkLogin() {
+            var username = document.getElementById("uname").value;
+            var password = document.getElementById("pwd").value;
+            if (username === "user" && password === "pswd") {
+                document.getElementById("result").innerHTML = "<h1>Welcome, " + username + "!</h1>";
+            } else {
+                document.getElementById("result").innerHTML = "<h1>Registration success</h1><a href='index.html'>Click for Home page</a>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1><u>Login Page</u></h1>
+    <h2>Username: <input type="text" id="uname" /></h2>
+    <h2>Password: <input type="password" id="pwd" /></h2>
+    <button onclick="checkLogin()">Click Me</button>
+    <div id="result"></div>
+</body>
+</html>

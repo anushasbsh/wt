@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Searching for XML Elements</title>
+    <script>
+        function readXMLData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "userlist.xml", false);
+            xhr.send();
+            var xmlDoc = xhr.responseXML;
+            var users = xmlDoc.getElementsByTagName("user");
+            var searchValue = document.getElementById("myText").value;
+            var output = "";
+
+            for (var i = 0; i < users.length; i++) {
+                var id = users[i].getElementsByTagName("userid")[0].textContent;
+                if (id === searchValue) {
+                    var name = users[i].getElementsByTagName("username")[0].textContent;
+                    var address = users[i].getElementsByTagName("address")[0].textContent;
+                    var phone = users[i].getElementsByTagName("phone")[0].textContent;
+                    var email = users[i].getElementsByTagName("email")[0].textContent;
+
+                    output = id + "<br>" + name + "<br>" + address + "<br>" + phone + "<br>" + email;
+                    break;
+                }
+            }
+            document.getElementById("displayDIV").innerHTML = output || "User not found";
+        }
+    </script>
+</head>
+<body>
+    <h1>Search User</h1>
+    <input type="text" id="myText" placeholder="Enter User ID">
+    <input type="button" value="Get User Details" onclick="readXMLData()">
+    <p>
+    <div id="displayDIV"></div>
+</body>
+</html>

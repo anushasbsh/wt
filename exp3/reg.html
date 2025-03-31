@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <script>
+        function validate() {
+            var flag = 1;
+            var str = document.myform.phno.value.trim();
+
+            if (flag == 1) {
+                alert("VALID INPUT");
+            } else {
+                alert("INVALID INPUT");
+                document.myform.focus();
+            }
+        }
+    </script>
+</head>
+<body bgcolor="blue">
+    <br><br>    
+    <form name="myform">
+        <div align="center">
+            <pre>
+NAME : <input type="text" name="name"><br>
+ADDRESS : <input type="text" name="addr"><br>
+CONTACT NUMBER : <input type="text" name="phno"><br>
+LOGIN ID : <input type="text" name="id"><br>
+PASSWORD : <input type="password" name="pwd">
+            </pre><br><br>
+            <input type="submit" value="OK" onClick="validate()">
+            <input type="reset" value="Clear">
+        </div>
+    </form>
+</body>
+</html>
